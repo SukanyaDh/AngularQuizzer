@@ -15,17 +15,25 @@ export class AppComponent {
   showHeader = false;
 
   title = 'AngularQuizzer';
+  showAdminLayout = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
+    // Check URL on initialization
+    this.checkAdminRoute(this.router.url);
+
+    // Subscribe to route changes
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      // Hide header on login page, show on all other pages
-      this.showHeader = !this.router.url.includes('/login');
-      console.log(this.showHeader)
+    ).subscribe((event: NavigationEnd) => {
+      this.checkAdminRoute(event.url);
     });
+  }
+
+  private checkAdminRoute(url: string): void {
+    // Show admin layout only for URLs that include 'admin/'
+    this.showAdminLayout = url.includes('admin/');
   }
 
 }

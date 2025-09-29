@@ -1,9 +1,6 @@
-<app-header *ngIf="showHeader"></app-header>
-<app-sidebar *ngIf="showHeader"></app-sidebar>
+<app-header *ngIf="showAdminLayout"></app-header>
+<app-sidebar *ngIf="showAdminLayout"></app-sidebar>
 
-<div *ngIf="showHeader" class="content">
-    <router-outlet></router-outlet>
-</div>
-<div *ngIf="!showHeader">
-    <router-outlet></router-outlet>
+<div [class.admin-layout]="showAdminLayout">
+  <router-outlet></router-outlet>
 </div>
