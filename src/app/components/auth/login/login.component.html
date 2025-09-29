@@ -1,45 +1,70 @@
 <div class="login-container">
-    <mat-card class="login-card">
-      <div class="login-header">
-        <mat-icon class="large-icon">account_circle</mat-icon>
-        <h2>Login</h2>
+  <div class="login-hero">
+    <div class="hero-content">
+      <h1>Welcome Back!</h1>
+      <p>Sign in to access your account and continue your learning journey with our interactive quizzes.</p>
+      <div class="hero-image">
+        <div class="floating-icon">
+          <mat-icon>quiz</mat-icon>
+        </div>
+        <div class="floating-icon">
+          <mat-icon>school</mat-icon>
+        </div>
+        <div class="floating-icon">
+          <mat-icon>emoji_events</mat-icon>
+        </div>
       </div>
+    </div>
+  </div>
   
+  <div class="login-form-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h2>Sign In</h2>
+        <p>Enter your credentials to continue</p>
+      </div>
+
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Username</mat-label>
-          <input matInput formControlName="username" placeholder="Enter your username">
-          <mat-icon matSuffix>person</mat-icon>
+          <mat-label>Email or Username</mat-label>
+          <input matInput formControlName="username" placeholder="Enter your email or username" required>
+          <mat-icon matPrefix>person_outline</mat-icon>
           <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
-            Username is required
+            Username or email is required
           </mat-error>
         </mat-form-field>
-  
+
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Password</mat-label>
           <input matInput [type]="hidePassword ? 'password' : 'text'" 
-                 formControlName="password" placeholder="Enter your password">
-          <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                formControlName="password" placeholder="Enter your password" required>
+          <mat-icon matPrefix>lock_outline</mat-icon>
+          <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()" tabindex="-1"
+                  [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'">
             <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
           <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
             Password is required
           </mat-error>
-          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
-            Password must be at least 6 characters
-          </mat-error>
         </mat-form-field>
   
-        <!-- <div class="login-actions">
+        <!-- <div class="form-options">
+          <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox>
           <a href="#" class="forgot-password">Forgot password?</a>
-        </div> -->
-  
-        <button mat-raised-button type="submit" class="login-button" 
-                [disabled]="!loginForm.valid">
-          Login
-          <mat-icon>send</mat-icon>
+        </div>
+   -->
+        <button mat-raised-button type="submit" 
+                [disabled]="!loginForm.valid" 
+                color="primary"
+                class="login-button">
+          Sign In
+          <mat-icon>arrow_forward</mat-icon>
         </button>
+
+        <div class="register-link">
+          Don't have an account? <a routerLink="/register">Sign up</a>
+        </div>
       </form>
-  
-    </mat-card>
+    </div>
   </div>
+</div>
