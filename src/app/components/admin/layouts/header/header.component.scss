@@ -1,0 +1,122 @@
+/* --- CSS Variables for Easy Customization --- */
+:host {
+  display: block;
+  background-image: url('/assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //padding: 20px;
+}
+
+:root {
+    --menu-bg-color: #f8f9fa; /* Light background, subtle contrast */
+    --menu-border-color: #e0e0e0; /* Light border */
+    --menu-text-color: #343a40; /* Darker text */
+    --menu-hover-bg: #e2e6ea; /* Hover background for buttons */
+    --logout-color: #dc3545; /* Red for logout */
+    --logout-hover-color: #c82333;
+    --menu-height: 100px;
+  }
+  
+  .menu-bar {
+   /* --- Key Sticky Properties --- */
+  position: fixed; /* Tells the browser to position it relative until a scroll position is reached */
+  top: 0; /* The position it should stick to (0 pixels from the top of the viewport) */
+  z-index: 1000; /* Ensures the menu bar always appears above other content when scrolling */
+  /* ----------------------------- */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(45deg, #2c2539, #57555e);
+  color: white; /* Light text color for better contrast */
+  
+  border-bottom: 1px solid var(--menu-border-color);
+  height: 70px;
+  padding: 0 25px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+  }
+  
+  
+  /* --- Left Section: Logo --- */
+  .menu-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline from link */
+    color: var(--menu-text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .app-logo {
+    height: 40px; /* Size of the logo */
+    width: auto;
+    margin-right: 10px;
+    border-radius: 4px; /* Slightly rounded corners for logo */
+  }
+  
+  .app-name-text {
+    /* No specific styles needed if it's alongside the logo and already styled by .app-logo-link */
+  }
+  
+  /* --- Right Section: Menu Items --- */
+  .menu-right {
+    display: flex;
+    gap: 15px; /* Space between menu items */
+  }
+  
+  .menu-item {
+    background: none;
+    border: none;
+    color: var(--menu-text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Prevent items from wrapping */
+  }
+  
+  .menu-item:hover {
+    background-color: var(--menu-hover-bg);
+  }
+  
+  .logout-button {
+    color: var(--logout-color);
+  }
+  
+  .logout-button:hover {
+    background-color: var(--logout-color);
+    color: #fff; /* White text on hover for logout */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 600px) {
+    .menu-bar {
+      padding: 0 15px;
+    }
+  
+    .app-name-text {
+      display: none; /* Hide app name text on small screens, keep only logo */
+    }
+  
+    .app-logo {
+      height: 35px;
+    }
+  
+    .menu-item {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+    }
+  }

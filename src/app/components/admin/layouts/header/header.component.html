@@ -1,0 +1,17 @@
+<nav class="menu-bar">
+    <div class="menu-left">
+      <a href="/" class="app-logo-link" >
+        <!-- <img src="assets/images/logo.png" alt="{{ appName }} Logo" class="app-logo"> -->
+        <span class="app-name-text">{{ appName }}</span>
+      </a>
+    </div>
+  
+    <div class="menu-right">
+      <button class="menu-item" (click)="onProfileClick()">
+        My Profile
+      </button>
+      <button class="menu-item logout-button" (click)="onLogoutClick()">
+        Logout
+      </button>
+    </div>
+  </nav>

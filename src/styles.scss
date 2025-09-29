@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+   // margin: 0;
+    //min-height: 100vh;
+   // background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: top;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    font-family: 'Roboto', sans-serif;
+    //color:white;
+  }
+
+  /* Global Material Table Styles */
+.mat-mdc-table {
+  background-color: #eff2f5 !important; /* Light gray background */
+  overflow: hidden;
+  box-shadow: 0 25px 16px rgb(24 1 11 / 100%);
+  color: #110101;
+  border-radius: 10%;
+
+}
+
+/* Optional: Style the header */
+.mat-mdc-header-row {
+  background-color: #574d5ef2 !important;
+  box-shadow: 0 25px 16px rgb(24 1 11 / 100%);
+  font-weight: 500;
+}
+
+/* Optional: Add hover effect on rows */
+.mat-mdc-row:hover {
+  background-color: #eff2f5 !important;
+  cursor: pointer;
+  color: #110101;
+}
+
+/* Optional: Style alternate rows */
+.mat-mdc-row:nth-child(even) {
+  background-color: #eff2f5 !important;
+  color: #110101;
+
+}
+
+/* Optional: Style odd rows */
+.mat-mdc-row:nth-child(odd) {
+  background-color: #eff2f5 !important;
+  color: #110101;
+
+}
+
+.mat-mdc-paginator{
+  background-color: #574d5ef2 !important;
+  box-shadow: 0 25px 16px rgb(24 1 11 / 40%);
+  border-radius: 20%;
+
+}
+
+/* Global Material Card Styles */
+.mat-mdc-card {
+  background-color: #574d5ef2 !important;
+  color: #110101;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  
+  /* Optional: Style card header */
+  .mat-mdc-card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    
+    .mat-mdc-card-title,
+    .mat-mdc-card-subtitle {
+      color: #ffffff;
+    }
+  }
+  
+  /* Style card content */
+  .mat-mdc-card-content {
+    padding: 16px;
+  }
+  
+  /* Style form fields inside cards */
+  .mat-mdc-form-field {
+    width: 100%;
+    
+    .mdc-text-field {
+      background-color: rgba(255, 255, 255, 0.05);
+      
+      .mdc-text-field__input {
+        color: #ffffff;
+      }
+      
+      .mdc-floating-label {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      
+      .mdc-line-ripple::after {
+        border-bottom-color: #ffffff;
+      }
+    }
+  }
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface{
+  background-color: #b6f5d6 !important;
+}
+
+.mat-mdc-raised-button, .mat-mdc-fab{
+  background-color: #37343ae0 !important;
+
+}

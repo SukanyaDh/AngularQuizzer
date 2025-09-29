@@ -1,0 +1,60 @@
+/* Card Styling */
+/* Card Styling */
+.topic-card {
+    max-width: 1100px; /* Limiting width is essential for consistent columns */
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  /* --- Key Layout: Flexbox Container --- */
+  .topic-fields-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px; /* Spacing between input fields */
+    margin-bottom: 20px;
+  }
+  
+  /* Wrapper for each input field and its remove button */
+  .topic-field-wrapper {
+    display: flex;
+    align-items: flex-start;
+    
+    /* --- The Change: Calculate width for 3 items per row --- */
+    /* (100% / 3) = 33.333% */
+    /* Subtract 10px to account for the gap: (2 gaps * 15px) / 3 items ≈ 10px per item adjustment */
+    width: calc(33.333% - 10px); /* Fallback minimum width to prevent fields from becoming too small */
+    min-width: 250px; 
+  }
+  
+  /* Ensure the Material input takes up the available width */
+  .topic-input-field {
+    flex-grow: 1; 
+    margin-right: 5px; 
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+
+/* Custom Snackbar Styling */
+::ng-deep .success-snackbar {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  
+  button {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+/* Optional: Add animation */
+::ng-deep .mat-mdc-snack-bar-container.success-snackbar {
+  margin-top: 64px; /* Adjust based on your header height */
+  margin-right: 16px;
+}

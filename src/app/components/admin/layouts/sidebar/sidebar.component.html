@@ -1,0 +1,48 @@
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="sidebar-logo">
+        <img src="assets/images/admin-logo.svg" alt="Admin Panel Logo">
+        <span class="app-name">Admin Dashboard</span>
+      </a>
+    </div>
+  
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item" [class.active]="isActive('/admin/dashboard')">
+          <a routerLink="/admin/dashboard" class="nav-link">
+            <i class="icon">🏠</i> <span class="link-text">Dashboard</span>
+          </a>
+        </li>
+        
+        <li class="nav-item" [class.active]="isActive('/admin/topics')">
+          <a routerLink="/admin/topics" class="nav-link">
+            <i class="icon">👤</i> <span class="link-text">Topics Management</span>
+          </a>
+        </li>
+  
+        <li class="nav-item" [class.active]="isActive('/admin/quiz')">
+          <a routerLink="/admin/quiz" class="nav-link">
+            <i class="icon">📦</i> <span class="link-text">Quiz Management</span>
+          </a>
+        </li>
+  
+        <li class="nav-item" [class.active]="isActive('/admin/users')">
+          <a routerLink="/admin/users" class="nav-link">
+            <i class="icon">📈</i> <span class="link-text">User Management</span>
+          </a>
+        </li>
+  
+        <li class="nav-item" [class.active]="isActive('/admin/settings')">
+          <a routerLink="/admin/settings" class="nav-link">
+            <i class="icon">⚙️</i> <span class="link-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <div class="sidebar-footer">
+      <a href="#" class="nav-link" (click)="logout()">
+        <i class="icon">🚪</i> <span class="link-text">Logout</span>
+      </a>
+    </div>
+  </aside>
